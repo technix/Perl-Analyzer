@@ -153,6 +153,7 @@ sub parse_dependencies {
             warn "Can't interpret $line at line $. in $self->{file}\n"
                 unless m!sys/syscall.ph!
                     or m!dumpvar.pl!
+                    or $required =~ /^\$/   # dynamic 'require'
                     or $required =~ /^5\./;
         }
     }
