@@ -32,7 +32,7 @@ if ($help) {
     exit;
 }
 
-if (! $input_file || ! $output_dir) {
+if (! $source_file || ! $output_dir) {
     print "Supported formats: [$formats]\n";
     pod2usage("Run '$0 --help' to see help page.\n");
     
