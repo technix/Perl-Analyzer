@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+use Getopt::Long;
+use Pod::Usage;
+use Perl::Analyzer::Output;
+
+my $source_file;
+my $output_dir;
+my $format = 'dump';
+my $filter;
+my $help = 0;
+my $verbose = 0;
+my $options = "";
+
+my $output = Perl::Analyzer::Output->new();
+my $formats = join '|', $output->formats();
+
+GetOptions ("source_file|src=s" => \$source_file,
+            "output_dir|out=s"  => \$output_dir,
+            "format|t=s"        => \$format,
+            "filter|f=s"        => \$filter,
+            "options|o=s"       => \$options,
+            "help|h"            => \$help,
+            "verbose|v"         => \$verbose,
+) or die("Error in command line arguments\n");
+
+if ($help) {
+    pod2usage(-verbose => 2);
+    exit;
+}
+
+if (! $input_file || ! $output_dir) {
+    print "Supported formats: [$formats]\n";
+    pod2usage("Run '$0 --help' to see help page.\n");
+    
+    exit;
+}
+
+$output->from_file($source_file);
+
+if ($filter) {
+    $output->apply_filter($filter);
+}
+
+$output->render(format => $format, output_dir => $output_dir, options => $options, verbose => $verbose);
+
+exit;
+
+
+__END__
+
+=head1 NAME
+
+perl-analyzer-output - render data from perl_analyzer in given format
+
+=head1 SYNOPSIS
+ 
+ perl-analyzer-output --source_file <file> --output_dir <dir> --format <format_name> [--options "options_string"] [--verbose]
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--source_file, --src>
+
+Directory with Perl source code to analyze.
+
+=item B<--output_dir, --out>
+
+Prints the manual page and exits.
+
+=item B<--verbose>
+
+Print processing information to stdout.
+
+=back
+
+=head1 DESCRIPTION
+
+This program performs analysis of Perl source code in given directory
+and stores data in output file. These data can be visualized later with
+perl_analyzer_output script.
+
+=cut

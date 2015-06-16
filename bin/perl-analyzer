@@ -1,0 +1,71 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+use Getopt::Long;
+use Pod::Usage;
+use Perl::Analyzer;
+
+my $source_dir;
+my $output_file;
+my $verbose = 0;
+my $help = 0;
+
+GetOptions ("source_dir|src=s" => \$source_dir,
+            "output_file|out=s" => \$output_file,
+            "help|h" => \$help,
+            "verbose|v" => \$verbose,
+) or die("Error in command line arguments\n");
+
+if ($help) {
+    pod2usage(-verbose => 2);
+    exit;
+}
+
+if (! $source_dir || ! $output_file) {
+    pod2usage("Run '$0 --help' to see help page.\n");
+    exit;
+}
+
+my $source_analyzer = Perl::Analyzer->new('verbose' => $verbose);
+$source_analyzer->analyze( $source_dir );
+$source_analyzer->to_file( $output_file );
+
+exit;
+
+__END__
+
+=head1 NAME
+
+perl-analyzer - Analyze Perl source in given directory
+
+=head1 SYNOPSIS
+ 
+ perl-analyzer --source_dir <source_dir> --output_file <file> [--verbose]
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--source_dir, --src>
+
+Directory with Perl source code to analyze.
+
+=item B<--output_file, --out>
+
+Output file with analysis data. Should be used as input file for perl_analyzer_output.
+
+=item B<--verbose>
+
+Print processing information to stdout.
+
+=back
+
+=head1 DESCRIPTION
+
+This program performs analysis of Perl source code in given directory
+and stores data in output file. These data can be visualized later with
+perl_analyzer_output script.
+
+=cut

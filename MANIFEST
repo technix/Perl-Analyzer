@@ -1,0 +1,23 @@
+Changes
+bin/perl-analyzer
+bin/perl-analyzer-output
+lib/Perl/Analyzer.pm
+lib/Perl/Analyzer/File.pm
+lib/Perl/Analyzer/Output.pm
+lib/Perl/Analyzer/Output/Base.pm
+lib/Perl/Analyzer/Output/Dumper.pm
+lib/Perl/Analyzer/Output/GraphViz.pm
+lib/Perl/Analyzer/Output/HTML.pm
+lib/Perl/Analyzer/Output/JSON.pm
+lib/Perl/Analyzer/Output/assets/bootstrap.min.css
+lib/Perl/Analyzer/Output/assets/d3.min.js
+lib/Perl/Analyzer/Output/assets/draw_tree.js
+lib/Perl/Analyzer/Output/templates/namespace.tpl
+lib/Perl/Analyzer/Output/templates/package.tpl
+Makefile.PL
+MANIFEST			This list of files
+README.md
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
