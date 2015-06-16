@@ -66,6 +66,6 @@ Print processing information to stdout.
 
 This program performs analysis of Perl source code in given directory
 and stores data in output file. These data can be visualized later with
-perl_analyzer_output script.
+perl_analyzer_output.
 
 =cut
