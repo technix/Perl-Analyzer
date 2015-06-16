@@ -9,8 +9,11 @@ sub new {
     my $self = {
         'codebase'   => $args{'codebase'},
         'output_dir' => $args{'output_dir'},
-        'format'     => $args{'format'},
-        'options'    => $args{'options'},
+        'format'     => $args{'format'} || 'svg',
+        'options'    => $args{'options'} || '',
+        'opts'       => {
+            rankdir => 'TB',
+        }, # internal options
     };
     bless $self, $class;
     return $self;
@@ -19,6 +22,7 @@ sub new {
 
 sub make {
     my $self = shift;
+    $self->parse_options();
     $self->create_output_dir();
     $self->build_namespace_graph();
     $self->build_package_graph();
@@ -31,7 +35,7 @@ sub build_namespace_graph {
     my ($graph) = GraphViz2->new(
                  edge   => {color => 'black'},
                  global => {directed => 1},
-                 graph  => {label => 'Namespaces',rankdir => "LR"},
+                 graph  => {label => 'Namespaces', %{$self->{'opts'}} },
                  node   => {color => 'blue', shape => 'box'},
     );
 
@@ -48,7 +52,7 @@ sub build_package_graph {
     my ($graph) = GraphViz2->new(
                  edge   => {color => 'black'},
                  global => {directed => 1},
-                 graph  => {label => 'Packages', rankdir => "LR" },
+                 graph  => {label => 'Packages', %{$self->{'opts'}} },
                  node   => {color => 'blue', shape => 'box'},
     );
 

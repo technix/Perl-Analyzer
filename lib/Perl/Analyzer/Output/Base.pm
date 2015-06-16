@@ -38,6 +38,17 @@ sub debug {
     print "$message\n" if $self->{'verbose'};
 }
 
+
+sub parse_options {
+    my ($self) = @_;
+    my @options = split ';', $self->{'options'};
+    for my $op (@options) {
+        if ($op =~ /^(\w+?)=(.+?)$/) {
+            $self->{'opts'}->{$1} = $2;
+        }
+    }
+}
+
 # progress counter
 {
     my $progress = 0;

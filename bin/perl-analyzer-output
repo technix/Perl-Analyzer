@@ -76,7 +76,7 @@ Prints the manual page and exits.
 
 Defines output format.
 
-=item B<--options "opt1=val1,opt2=val2">
+=item B<--options "opt1=val1;opt2=val2">
 
 Define options for given format.
 

@@ -3,3 +3,5 @@ Revision history for Perl-Analyzer
 0.01    2015-06-15
         First version, released on an unsuspecting world.
 
+0.02    2015-06-16
+        Added basic options support for GraphViz output.
