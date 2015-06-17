@@ -51,6 +51,8 @@
     </head>
   <body>
     <? my $has_inheritance_tree = scalar @{$package->{'parent_list'}} > 1 ? 1 : 0; ?>
+    <? my $has_constants = scalar keys %{$package->{'constants'}} ? 1 : 0; ?>
+    <? my $has_fields = scalar @{$package->{'fields'}} ? 1 : 0; ?>
     <? my $has_dependencies = scalar @{$package->{'depends_on'}} ? 1 : 0; ?>
     <? my $has_package_methods = scalar @{$package->{'methods'}} ? 1 : 0; ?>
     <? my $has_inherited_methods = scalar @{$package->{'methods_inherited'}} ? 1 : 0; ?>
@@ -67,6 +69,8 @@
             <h1><?= $stash->{'package'} ?></h1>
             <ul class="list-inline">
             <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            <? if ($has_constants) { ?><li><a href="#constants" class="btn btn-default btn-xs">Constants</a></li><? } ?>
+            <? if ($has_fields) { ?><li><a href="#fields" class="btn btn-default btn-xs">Fields</a></li><? } ?>
             <? if ($has_inheritance_tree) { ?>
                 <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
                 <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
@@ -102,6 +106,39 @@
         </table>
         </div>
         </div>
+
+        <? if ($has_constants) { ?>
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Constants <section id="constants"></section></h3></div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Value</th>
+            </tr>
+            <? for my $p (sort keys %{$package->{'constants'}}) { ?>
+            <tr>
+                <td><?= $p ?></td>
+                <td><?= $package->{'constants'}->{$p} ?></td>
+            </tr>
+            <? } ?>
+            </table>
+        </div>
+        </div>
+        <? } ?>
+
+        <? if ($has_fields) { ?>
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Fields <section id="fields"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            <? for my $p (@{$package->{'fields'}}) { ?>
+                <li><?= $p ?></li>
+            <? } ?>
+            </ul>
+        </div>
+        </div>
+        <? } ?>
         
         <? if ($has_inheritance_tree) { ?>
         <div class="panel panel-default">

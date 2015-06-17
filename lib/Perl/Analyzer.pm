@@ -12,18 +12,14 @@ Perl::Analyzer -  Analyze Perl source
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 =head1 SYNOPSIS
-
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
 
     my $pa = Perl::Analyzer->new();
     $pa->analyze( '/perl/source/dir' );

@@ -1,7 +1,7 @@
 package Perl::Analyzer::File;
 use strict;
 use warnings;
-
+use Safe;
 
 sub new {
     my ($class, %args) = @_;
@@ -19,6 +19,7 @@ sub new {
         'rootdir' => $args{'rootdir'},
         'data' => {},
         'seen' => {},
+        'source' => {},
         'in_pod' => undef,
         'curr_pkg' => undef,
         'curr_method' => undef,
@@ -51,6 +52,9 @@ sub parse {
         # skip lines which are not belong to package namespace
         next if !$self->{'curr_pkg'};
         
+        # append current line to package source
+        $self->{'source'}->{$self->{'curr_pkg'}} .= $_ . "\n";
+
         # count non-empty lines
         $self->count_package_lines($_);
         
@@ -61,6 +65,12 @@ sub parse {
         $self->parse_inheritance($_, $fh);
     }
     close $fh;
+
+    for my $pkg (sort keys %{$self->{'source'}}) {
+        $self->parse_inheritance_isa($pkg);
+        $self->parse_constants($pkg);
+        $self->parse_fields($pkg);
+    }
 
     return $self->{'data'};
 }
@@ -82,6 +92,8 @@ sub parse_package {
             'methods'          => [],
             'methods_super'    => [],
             'methods_used'     => {},
+            'constants'        => {},
+            'fields'           => [],
         };
     }
 }
@@ -165,8 +177,6 @@ sub parse_inheritance {
     
     # the 'base/parent' pragma
     if ($line =~ m/^\s*use\s+(base|parent)\s+(.*)/) {
-        require Safe;
-        my $safe = new Safe;
         ( my $list = $2 ) =~ s/\s+\#.*//;
         $list =~ s/[\r\n]//;
         while ( $list !~ /;\s*$/ && ( $_ = <$fh> ) ) {
@@ -175,10 +185,64 @@ sub parse_inheritance {
             $list .= $_;
         }
         $list =~ s/;\s*$//;
-        my (@mods) = $safe->reval($list);
+        my (@mods) = Safe->new()->reval($list);
         warn "Unable to eval $line at line $. in $self->{file}: $@\n" if $@;
         foreach my $mod (@mods) {
             $self->dpush('parent', $mod);
+        }
+    }
+}
+
+
+# parsers for whole source tree
+
+sub parse_inheritance_isa {
+    my ($self, $pkg) = @_;
+    $self->{'curr_pkg'} = $pkg;
+
+    my $src = $self->{'source'}->{$pkg};
+    if ($src =~ /\@ISA\s*=\s*(.+?);/sm) {
+        my $isa_list = $1;
+        my (@mods) = Safe->new()->reval($isa_list);
+        foreach my $mod (@mods) {
+            $self->dpush('parent', $mod);
+        }
+    }
+}
+
+
+sub parse_constants {
+    my ($self, $pkg) = @_;
+
+    my $src = $self->{'source'}->{$pkg};
+    while ($src =~ /use\s*constant(.+?);$/gsm) {
+        my $constant_list = $1;
+        my $safe = Safe->new();
+        my %constants;
+        if ($constant_list =~ /\{/) {
+            %constants = %{$safe->reval($constant_list)};
+        }
+        else {
+            (%constants) = $safe->reval($constant_list);
+        }
+
+        for my $key (keys %constants) {
+            $self->{'data'}->{$pkg}->{'constants'}->{$key} = $constants{$key};
+        }
+    }
+}
+
+
+sub parse_fields {
+    my ($self, $pkg) = @_;
+    $self->{'curr_pkg'} = $pkg;
+
+    my $src = $self->{'source'}->{$pkg};
+    while ($src =~ /use\s*fields(.+?);$/gsm) {
+        my $fields_list = $1;
+        my (@fields) = Safe->new()->reval($fields_list);
+        foreach my $field (@fields) {
+            $self->dpush('fields', $field);
         }
     }
 }

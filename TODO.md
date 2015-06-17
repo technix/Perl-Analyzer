@@ -1,10 +1,9 @@
 TODO
 ------------------------
-* Support of @ISA inheritance
 * List methods which are used from 'use'd modules
 * List @EXPORTS
-* List constants ('use constants/Readonly/...')
-* List fields ('use fields')
+* List methods which are directly imported from package
+* List constants defined with Readonly
 * [?] Dead code detection (unused methods/modules)
 * Better documentation
 * Better POD
