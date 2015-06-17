@@ -101,7 +101,7 @@ sub make_namespace_index {
     });
 
     foreach my $ns (@{$namespaces}) {
-        my @ns_list = sort keys($tree->{$ns});
+        my @ns_list = sort keys %{$tree->{$ns}};
         $self->make_namespace_index(\@ns_list, $tree->{$ns}, $ns, $namespace);
     }
 }
