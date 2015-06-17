@@ -56,7 +56,8 @@
     <? my $has_dependencies = scalar @{$package->{'depends_on'}} ? 1 : 0; ?>
     <? my $has_package_methods = scalar @{$package->{'methods'}} ? 1 : 0; ?>
     <? my $has_inherited_methods = scalar @{$package->{'methods_inherited'}} ? 1 : 0; ?>
-  
+    <? my $has_used_methods = scalar keys %{$package->{'methods_used'}} ? 1 : 0; ?>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
 
@@ -78,6 +79,7 @@
             <? if ($has_dependencies) { ?><li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li><? } ?>
             <? if ($has_package_methods) { ?><li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li><? } ?>
             <? if ($has_inherited_methods) { ?><li><a href="#inherited_methods" class="btn btn-default btn-xs">Inherited methods</a></li><? } ?>
+            <? if ($has_used_methods) { ?><li><a href="#used_methods" class="btn btn-default btn-xs">Used methods</a></li><? } ?>
             </ul>
         </div>
     </nav>
@@ -249,6 +251,33 @@
         </table>
         </div>
         </div>
+
+        <? if ($has_used_methods) { ?>
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used methods <section id="used_methods"></section></h3></div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+            <tr>
+            <th class="active" style="width:15%">Package</th>
+            <th class="active">Methods</th>
+            </tr>
+            <? for my $p (sort keys %{$package->{'methods_used'}}) { ?>
+            <tr>
+                <td><? if (exists $stash->{'data'}->{$p}) { ?><a href="<?= _pkg_filename($p) ?>"><?= $p ?></a><? } else { ?><?= $p ?><? }?></td>
+                <td>
+                    <ul class="list-unstyled">
+                        <? for my $method (@{$package->{'methods_used'}->{$p}}) { ?>
+                        <li><?= $method ?></a></li>
+                        <? } ?>
+                    </ul>
+                </td>
+            </tr>
+            <? } ?>
+            </table>
+        </div>
+        </div>
+        <? } ?>
+
 
     </div>
   </body>
