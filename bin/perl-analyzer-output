@@ -18,8 +18,8 @@ my $options = "";
 my $output = Perl::Analyzer::Output->new();
 my $formats = join '|', $output->formats();
 
-GetOptions ("source_file|src=s" => \$source_file,
-            "output_dir|out=s"  => \$output_dir,
+GetOptions ("datafile|data=s" => \$source_file,
+            "output-dir|out=s"  => \$output_dir,
             "format|t=s"        => \$format,
             "filter|f=s"        => \$filter,
             "options|o=s"       => \$options,
@@ -58,19 +58,19 @@ perl-analyzer-output - render data from perl_analyzer in given format
 
 =head1 SYNOPSIS
  
- perl-analyzer-output --source_file <file> --output_dir <dir> --format <format_name> [--options "options_string"] [--verbose]
+ perl-analyzer-output --datafile <file> --output-dir <dir> --format <format_name> [--options "options_string"] [--verbose]
 
 =head1 OPTIONS
 
 =over 8
 
-=item B<--source_file, --src>
+=item B<--datafile, --data>
 
-Directory with Perl source code to analyze.
+Input file with analysis data.
 
-=item B<--output_dir, --out>
+=item B<--output-dir, --out>
 
-Prints the manual page and exits.
+Output directory. Created automatically if does not exist.
 
 =item B<--format format_name>
 

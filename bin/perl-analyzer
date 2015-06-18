@@ -12,8 +12,8 @@ my $output_file;
 my $verbose = 0;
 my $help = 0;
 
-GetOptions ("source_dir|src=s" => \$source_dir,
-            "output_file|out=s" => \$output_file,
+GetOptions ("source-dir|src=s" => \$source_dir,
+            "datafile|data=s" => \$output_file,
             "help|h" => \$help,
             "verbose|v" => \$verbose,
 ) or die("Error in command line arguments\n");
@@ -42,17 +42,17 @@ perl-analyzer - Analyze Perl source in given directory
 
 =head1 SYNOPSIS
  
- perl-analyzer --source_dir <source_dir> --output_file <file> [--verbose]
+ perl-analyzer --source-dir <source_dir> --datafile <file> [--verbose]
 
 =head1 OPTIONS
 
 =over 8
 
-=item B<--source_dir, --src>
+=item B<--source-dir, --src>
 
 Directory with Perl source code to analyze.
 
-=item B<--output_file, --out>
+=item B<--datafile, --data>
 
 Output file with analysis data. Should be used as input file for perl_analyzer_output.
 

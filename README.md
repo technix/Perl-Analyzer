@@ -18,8 +18,8 @@ Perl::Analyzer::Output and related plugins).
 
 Usage example:
 
-    perl-analyzer --source-dir=~/my/perl/Project --output-file=~/my/perl/Project_src.dat
-    perl-analyzer-output --input-file=~/my/perl/Project_src.dat --output-dir=~/my/perl/Project_analysis --format=html
+    perl-analyzer --source-dir=~/my/perl/Project --datafile=~/my/perl/Project_src.dat
+    perl-analyzer-output --datafile=~/my/perl/Project_src.dat --output-dir=~/my/perl/Project_analysis --format=html
 
 Available output formats:
 
