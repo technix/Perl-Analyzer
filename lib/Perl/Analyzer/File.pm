@@ -223,9 +223,12 @@ sub parse_constants {
             %constants = %{$safe->reval($constant_list)};
         }
         else {
-            (%constants) = $safe->reval($constant_list);
+            my @constant_list = $safe->reval($constant_list);
+            if (scalar @constant_list > 1) {
+                # correct handling of 'use constant 1.01;'
+                %constants = @constant_list;
+            }
         }
-
         for my $key (keys %constants) {
             $self->{'data'}->{$pkg}->{'constants'}->{$key} = $constants{$key};
         }
