@@ -96,11 +96,20 @@ is_deeply(
     '@ISA'
 );
 
+TODO: {
+    local $TODO = 'Package-scoped @ISA';
+
 is_deeply(
     $data->{'TestP::IsaPkg'}->{$parent_key},
     ['TestP::Base'],
     '@Package::ISA'
 );
+
+}
+
+TODO: {
+    local $TODO = 'Push to @ISA';
+
 
 is_deeply(
     $data->{'TestP::IsaPush'}->{$parent_key},
@@ -113,6 +122,8 @@ is_deeply(
     ['TestP', 'TestP::Base'],
     'push @Package::ISA'
 );
+
+}
 
 ### 
 
