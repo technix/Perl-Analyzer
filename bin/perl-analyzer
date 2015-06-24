@@ -11,11 +11,15 @@ my $source_dir;
 my $output_file;
 my $verbose = 0;
 my $help = 0;
+my $with_constants = 0;
+my $with_fields = 0;
 
 GetOptions ("source-dir|src=s" => \$source_dir,
             "datafile|data=s" => \$output_file,
             "help|h" => \$help,
             "verbose|v" => \$verbose,
+            "with-constants|c" => \$with_constants,
+            "with-fields|f" => \$with_fields,
 ) or die("Error in command line arguments\n");
 
 if ($help) {
@@ -28,7 +32,11 @@ if (! $source_dir || ! $output_file) {
     exit;
 }
 
-my $source_analyzer = Perl::Analyzer->new('verbose' => $verbose);
+my $source_analyzer = Perl::Analyzer->new(
+    'verbose'           => $verbose,
+    'with_constants'    => $with_constants,
+    'with_fields'       => $with_fields,
+);
 $source_analyzer->analyze( $source_dir );
 $source_analyzer->to_file( $output_file );
 
@@ -43,6 +51,7 @@ perl-analyzer - Analyze Perl source in given directory
 =head1 SYNOPSIS
  
  perl-analyzer --source-dir <source_dir> --datafile <file> [--verbose]
+ [--with-constants] [--with-fields]
 
 =head1 OPTIONS
 
@@ -59,6 +68,14 @@ Output file with analysis data. Should be used as input file for perl_analyzer_o
 =item B<--verbose>
 
 Print processing information to stdout.
+
+=item B<--with-constants>
+
+Parse 'use constant'.
+
+=item B<--with-fields>
+
+Parse 'use fields'.
 
 =back
 

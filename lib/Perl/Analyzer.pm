@@ -39,6 +39,8 @@ sub new {
         'namespaces' => {},
         'namespace_tree' => {},
         'verbose' => $args{'verbose'},
+        'with_constants' => $args{'with_constants'},
+        'with_fields' => $args{'with_fields'},
     };
     bless $self, $class;
     return $self;
@@ -142,8 +144,8 @@ sub build_source_tree {
         my $parsefile = Perl::Analyzer::File->new(
             'file' => $_,
             'rootdir' => $File::Find::dir,
-            'with_constants' => 1,
-            'with_fields' => 1,
+            'with_constants' => $self->{'with_constants'},
+            'with_fields' => $self->{'with_fields'},
         )->parse();
         foreach my $p (keys %{$parsefile}) {
             $src_tree->{$p} = $parsefile->{$p};
