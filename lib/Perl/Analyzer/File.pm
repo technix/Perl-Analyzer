@@ -42,11 +42,11 @@ sub parse {
 
     while (<$fh>) {
         s/\r?\n$//;
+        $self->{'in_pod'} = 1 if m/^=\w+/ && !m/^=cut/;
         if ($self->{'in_pod'}) {
             $self->{'in_pod'} = 0 if /^=cut/;
             next;
         }
-        $self->{'in_pod'} = 1 if m/^=\w+/ && !m/^=cut/;
         last if m/^\s*__(END|DATA)__/;
 
         $self->parse_package($_);
