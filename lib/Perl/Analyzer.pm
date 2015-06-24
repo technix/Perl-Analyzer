@@ -139,7 +139,12 @@ sub build_source_tree {
     my $process_file = sub {
         return if -d $_;
         return if ! /\.p[lm]$/;
-        my $parsefile = Perl::Analyzer::File->new('file' => $_, 'rootdir' => $File::Find::dir)->parse();
+        my $parsefile = Perl::Analyzer::File->new(
+            'file' => $_,
+            'rootdir' => $File::Find::dir,
+            'with_constants' => 1,
+            'with_fields' => 1,
+        )->parse();
         foreach my $p (keys %{$parsefile}) {
             $src_tree->{$p} = $parsefile->{$p};
         }

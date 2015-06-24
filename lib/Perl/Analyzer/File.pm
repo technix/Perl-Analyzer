@@ -14,15 +14,17 @@ sub new {
     (my $filename = $file) =~ s/^\.//;
     
     my $self = {
-        'file' => $file,
-        'filename' => $filename,
-        'rootdir' => $args{'rootdir'},
-        'data' => {},
-        'seen' => {},
-        'source' => {},
-        'in_pod' => undef,
-        'curr_pkg' => undef,
-        'curr_method' => undef,
+        'with_constants'=> $args{'with_constants'} || 0,
+        'with_fields'   => $args{'with_fields'} || 0,
+        'file'          => $file,
+        'filename'      => $filename,
+        'rootdir'       => $args{'rootdir'},
+        'data'          => {},
+        'seen'          => {},
+        'source'        => {},
+        'in_pod'        => undef,
+        'curr_pkg'      => undef,
+        'curr_method'   => undef,
     };
     
     bless $self, $class;
@@ -68,8 +70,9 @@ sub parse {
 
     for my $pkg (sort keys %{$self->{'source'}}) {
         $self->parse_inheritance_isa($pkg);
-        $self->parse_constants($pkg);
-        $self->parse_fields($pkg);
+        
+        $self->parse_constants($pkg) if $self->{'with_constants'};
+        $self->parse_fields($pkg)    if $self->{'with_fields'};
     }
 
     return $self->{'data'};
