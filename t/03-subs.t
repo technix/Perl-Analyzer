@@ -2,7 +2,8 @@
 use strict;
 use warnings;
 use lib qw(./lib ../lib);
-use Test::More tests => 10;
+use Test::More tests => 12;
+use Data::Dumper;
 
 require_ok('Perl::Analyzer::File');
 
@@ -78,6 +79,24 @@ is_deeply(
 );
 
 }
+
+# SUPER methods
+
+is_deeply(
+    $data->{'TestSub::Super'}->{'methods_super'},
+    ['test'],
+    'SUPER methods'
+);
+
+
+# Call methods from other modules
+
+is_deeply(
+    $data->{'TestSub::Call'}->{'methods_used'},
+    { 'Carp' => ['croak', 'longmess'], 'File::Spec' => ['catdir', 'catfile'] },
+    'Call methods from other modules'
+) or diag (Dumper($data->{'TestSub::Call'}->{'methods_used'}));
+
 
 ### 
 

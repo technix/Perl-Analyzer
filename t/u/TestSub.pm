@@ -87,5 +87,32 @@ my $new1 = sub {
     2;
 };
 
+#-------------------------------
+package TestSub::Super;
+use base 'TestM';
+
+sub test {
+  my $a = SUPER::test();
+}
+
+#-------------------------------
+package TestSub::Call;
+use Carp;
+use File::Spec;
+
+sub test {
+  my $a = Carp::croak();
+  my $b = Carp::longmess('test');
+  ##my $c = Carp::cluck; # no parentheses
+  # complex names
+  ## my $d = File::Spec::rootdir; # no parentheses
+  my $e = File::Spec::catdir('a','b');
+}
+
+sub testb {
+  my $c = File::Spec->catfile('/tmp/zzz'); # class method
+}
+
+
 
 1;
