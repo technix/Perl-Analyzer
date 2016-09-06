@@ -49,13 +49,45 @@ that allow you to analyse and visualise Perl codebases:</p>
 
 <h2>Example</h2>
 
-<p>This is the output of perl-analyzer for DBIx::Class package. (Click on images to view them in full size)</p>
+<p>Let's do an analysis of DBIx::Class module:</p>
 
-<b>Namespaces chart</b>
-<a href="images/namespaces.png"><img src="images/namespaces-tn.png"></a>
+<pre><code style="font-size:0.7em">perl-analyzer --source-dir=DBIx-Class-0.082840 --datafile=DBIx-Class.dat
 
-<b>Package dependency chart</b>
-<a href="images/packages.png"><img src="images/packages-tn.png"></a>
+perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysis --format=html
+
+perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysis 
+    --format=png --options="rankdir=LR"
+</code></pre>
+
+<p>Here are the results: </p>
+
+
+<p><a href="perl-analyzer/index.html" target="_blank">Browse HTML output of analysis of DBIx::Class</a></p>
+<p><a href="perl-analyzer/DBIx-Class-Core.html" target="_blank">Example page with analysis of DBIx::Class::Core</a></p>
+
+<table style="border:0px; border-collapse:collapse">
+    <tbody>
+	<tr>
+	    <td style="border:0px; vertical-align:top; padding:0px; padding-right: 10px">
+	    <a href="images/namespaces.png" target="_blank"><img src="images/namespaces-tn.png" style="margin:0px"></a>
+	    </td>
+	    <td style="border:0px; vertical-align:top; padding: 0px">
+	    <a href="images/packages.png" target="_blank"><img src="images/packages-tn.png" style="margin:0px"></a>
+	    </td>
+	</tr>
+	<tr>
+	    <td style="border:0px; padding: 0px; padding-right: 10px; text-align:center">
+	    Namespaces chart
+	    </td>
+	    <td style="border:0px; padding: 0px; text-align:center">
+	    Package dependency chart
+	    </td>
+	</tr>
+    </tbody>
+</table>
+<div style="text-align:center; font-size:0.7em">(Click on images to view them in full size)</div>
+
+
 
 <h2>Usage</h2>
 
@@ -63,11 +95,6 @@ that allow you to analyse and visualise Perl codebases:</p>
 Perl::Analyzer module) and renderer (perl-analyzer-output, which uses
 Perl::Analyzer::Output and related plugins).</p>
 
-<pre><code>perl-analyzer --source-dir=~/my/perl/Project 
-    --datafile=~/my/perl/Project_src.dat
-perl-analyzer-output --datafile=~/my/perl/Project_src.dat 
-    --output-dir=~/my/perl/Project_analysis --format=html
-</code></pre>
 
 <p>Available output formats:</p>
 
@@ -89,7 +116,7 @@ through namespaces and view detailed package information.</p>
 <p>Generates namespace and inheritance diagrams in given format.</p>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALLATION</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>To install this module, run the following commands:</p>
 
@@ -100,12 +127,12 @@ make install
 </code></pre>
 
 <h2>
-<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ACKNOWLEDGEMENTS</h2>
+<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgements</h2>
 
 <p>File analyzer code based on Module::Dependency by Tim Bunce and P Kent.</p>
 
 <h2>
-<a id="license-and-copyright" class="anchor" href="#license-and-copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LICENSE AND COPYRIGHT</h2>
+<a id="license-and-copyright" class="anchor" href="#license-and-copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License and copyright</h2>
 
 <p>Copyright (C) 2015 Serhii Mozhaiskyi</p>
 

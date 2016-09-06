@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::Storage::DBI::Oracle</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage-DBI-Oracle.html">DBIx::Class::Storage::DBI::Oracle</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::Storage::DBI::Oracle</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+                <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
+                <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            <li><a href="#inherited_methods" class="btn btn-default btn-xs">Inherited methods</a></li>
+            
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class/Storage/DBI<strong>/Oracle.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>17</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>6</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Inheritance tree <section id="inheritance"></section></h3></div>
+        <div class="panel-body" style="overflow: auto;">
+            <div id="inheritance_tree" >
+            <script>
+            var tree_data = [{"type":"node_parent","name":"DBIx::Class::Exception","children":[{"name":"Carp","parent":"DBIx::Class::Exception","type":"node_use"},{"name":"DBIx::Class::Carp","parent":"DBIx::Class::Exception","type":"node_use"},{"name":"overload","parent":"DBIx::Class::Exception","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Exception","name":"strict"},{"name":"warnings","parent":"DBIx::Class::Exception","type":"node_use"},{"type":"node_parent","parent":"DBIx::Class::Exception","name":"Class::Accessor::Grouped","children":[{"type":"node_parent","name":"DBIx::Class::AccessorGroup","children":[{"parent":"DBIx::Class::AccessorGroup","name":"Scalar::Util","type":"node_use"},{"type":"node_use","name":"base","parent":"DBIx::Class::AccessorGroup"},{"name":"namespace::clean","parent":"DBIx::Class::AccessorGroup","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::AccessorGroup","name":"strict"},{"type":"node_use","parent":"DBIx::Class::AccessorGroup","name":"warnings"},{"children":[{"type":"node_parent","children":[{"name":"DBIx::Class::Exception","parent":"DBIx::Class","type":"node_use"},{"type":"node_use","name":"DBIx::Class::Optional::Dependencies","parent":"DBIx::Class"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::StartupCheck"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::_Util"},{"type":"node_use","name":"base","parent":"DBIx::Class"},{"type":"node_use","parent":"DBIx::Class","name":"mro"},{"type":"node_use","name":"strict","parent":"DBIx::Class"},{"type":"node_use","name":"warnings","parent":"DBIx::Class"},{"children":[{"type":"node_use","parent":"DBIx::Class::Storage","name":"Config::Any"},{"type":"node_use","name":"DBIx::Class::Carp","parent":"DBIx::Class::Storage"},{"parent":"DBIx::Class::Storage","name":"DBIx::Class::Storage::BlockRunner","type":"node_use"},{"parent":"DBIx::Class::Storage","name":"DBIx::Class::Storage::Debug::PrettyPrint","type":"node_use"},{"parent":"DBIx::Class::Storage","name":"DBIx::Class::Storage::Statistics","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Storage","name":"DBIx::Class::Storage::TxnScopeGuard"},{"type":"node_use","parent":"DBIx::Class::Storage","name":"Scalar::Util"},{"type":"node_use","parent":"DBIx::Class::Storage","name":"Try::Tiny"},{"type":"node_use","name":"base","parent":"DBIx::Class::Storage"},{"type":"node_use","name":"mro","parent":"DBIx::Class::Storage"},{"type":"node_use","name":"namespace::clean","parent":"DBIx::Class::Storage"},{"name":"strict","parent":"DBIx::Class::Storage","type":"node_use"},{"name":"warnings","parent":"DBIx::Class::Storage","type":"node_use"},{"parent":"DBIx::Class::Storage","name":"DBIx::Class::Storage::DBIHacks","children":[{"parent":"DBIx::Class::Storage::DBIHacks","children":[{"type":"node_use","parent":"DBIx::Class::Storage::DBI","name":"Context::Preserve"},{"name":"DBI","parent":"DBIx::Class::Storage::DBI","type":"node_use"},{"type":"node_use","name":"DBI::Const::GetInfoReturn","parent":"DBIx::Class::Storage::DBI"},{"name":"DBI::Const::GetInfoType","parent":"DBIx::Class::Storage::DBI","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Storage::DBI","name":"DBIx::Class::Carp"},{"type":"node_use","parent":"DBIx::Class::Storage::DBI","name":"DBIx::Class::_Util"},{"parent":"DBIx::Class::Storage::DBI","name":"Data::Dumper::Concise","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Storage::DBI","name":"List::Util"},{"name":"SQL::Abstract","parent":"DBIx::Class::Storage::DBI","type":"node_use"},{"type":"node_use","name":"SQL::Translator::Diff","parent":"DBIx::Class::Storage::DBI"},{"type":"node_use","name":"Scalar::Util","parent":"DBIx::Class::Storage::DBI"},{"parent":"DBIx::Class::Storage::DBI","name":"Try::Tiny","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Storage::DBI","name":"base"},{"parent":"DBIx::Class::Storage::DBI","name":"mro","type":"node_use"},{"parent":"DBIx::Class::Storage::DBI","name":"namespace::clean","type":"node_use"},{"type":"node_use","name":"strict","parent":"DBIx::Class::Storage::DBI"},{"parent":"DBIx::Class::Storage::DBI","name":"warnings","type":"node_use"},{"parent":"DBIx::Class::Storage::DBI","name":"DBIx::Class::Storage::DBI::Oracle","children":[{"parent":"DBIx::Class::Storage::DBI::Oracle","name":"Try::Tiny","type":"node_use"},{"type":"node_use","name":"base","parent":"DBIx::Class::Storage::DBI::Oracle"},{"parent":"DBIx::Class::Storage::DBI::Oracle","name":"mro","type":"node_use"},{"parent":"DBIx::Class::Storage::DBI::Oracle","name":"namespace::clean","type":"node_use"},{"parent":"DBIx::Class::Storage::DBI::Oracle","name":"strict","type":"node_use"},{"type":"node_use","name":"warnings","parent":"DBIx::Class::Storage::DBI::Oracle"}],"type":"node_current"}],"name":"DBIx::Class::Storage::DBI","type":"node_parent"}],"type":"node_parent"}],"name":"DBIx::Class::Storage","parent":"DBIx::Class","type":"node_parent"}],"name":"DBIx::Class","parent":"DBIx::Class::Componentised"}],"name":"DBIx::Class::Componentised","parent":"DBIx::Class::AccessorGroup","type":"node_parent"}],"parent":"Class::Accessor::Grouped"}]}],"parent":"null"}]
+            var tree_data_json = tree_data[0];
+            
+            var mlen   = 33;
+            var mchld  = 26;
+            var tdepth = 9;
+
+            </script>
+            </div>
+        </div>
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Parent packages <section id="parent_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li><a href="DBIx-Class-Storage-DBI-Oracle.html">DBIx::Class::Storage::DBI::Oracle</a></li>
+            
+                <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+            
+                <li>DBIx::Class::Storage::DBIHacks</li>
+            
+                <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+            
+                <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+            
+                <li>DBIx::Class::Componentised</li>
+            
+                <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+            
+                <li>Class::Accessor::Grouped</li>
+            
+                <li><a href="DBIx-Class-Exception.html">DBIx::Class::Exception</a></li>
+            
+            </ul>
+        </div>
+        </div>
+
+
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>Try::Tiny</li>
+            
+                <li>base</li>
+            
+                <li>mro</li>
+            
+                <li>namespace::clean</li>
+            
+                <li>strict</li>
+            
+                <li>warnings</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    <em>_rebless</em>
+                
+                </strong>
+                </td>
+                <td>
+                
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                
+                </td>
+            </tr>
+            
+        
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Inherited methods <section id="inherited_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Inherited from</th>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>CLONE</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DBIx::Class::_ENV_::HELP_URL</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DESTROY</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>MODIFY_CODE_ATTRIBUTES</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>bind_attribute_by_data_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>build_datetime_parser</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>columns_info_for</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>component_base_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>connect_call_datetime_setup</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>connect_call_do_sql</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>connect_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>connected</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>create_ddl_dir</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>cursor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>datetime_parser</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>dbh</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>dbh_do</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>debugcb</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>debugfh</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>debugobj</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>delete</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>deploy</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>deployment_statements</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>disconnect</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>disconnect_call_do_sql</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>ensure_connected</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_dbms_capability</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_use_dbms_capability</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>insert</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>insert_bulk</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>is_datatype_numeric</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>is_replicating</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>lag_behind_master</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>last_insert_id</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classaccessor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classdata</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>new</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>relname_to_table_alias</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>rethrow</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Exception.html">DBIx::Class::Exception</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>select</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>select_single</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_dbms_capability</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_schema</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_use_dbms_capability</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>sql_maker</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>sqlt_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_begin</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_release</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_rollback</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>throw</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Exception.html">DBIx::Class::Exception</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>throw_exception</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_begin</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_commit</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_do</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_rollback</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_scope_guard</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>update</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>with_deferred_fk_checks</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_arm_global_destructor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_attr_cache</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_bind_sth_params</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_connect</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_count_select</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_columns_info_for</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_execute</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_execute_for_fetch</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_execute_inserts_with_no_binds</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_get_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbh_last_insert_id</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbi_attrs_for_bind</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_dbi_connect_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_default_dbi_connect_attributes</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_describe_connection</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_determine_connector_driver</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_determine_driver</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_determine_supports_join_optimizer</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_determine_supports_placeholders</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_determine_supports_typeless_placeholders</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_do_connection_actions</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_do_query</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_exec_txn_begin</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_exec_txn_commit</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_exec_txn_rollback</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_execute</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_extract_driver_from_connect_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_format_for_trace</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_gen_sql_bind</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_get_dbh</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_get_server_version</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_init</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_insert_bulk</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_is_binary_lob_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_is_binary_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_is_lob_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_is_text_lob_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_max_column_bytesize</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_native_data_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_normalize_connect_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_parse_connect_do</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_ping</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_populate_dbh</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_prefetch_autovalues</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_prep_for_execute</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_prepare_sth</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_query_end</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_query_start</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_resolve_bindattrs</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_run_connection_actions</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_seems_connected</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_select</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_select_args</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_select_args_to_query</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_server_info</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_svp_generate_name</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_verify_pid</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_warn_undetermined_driver</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+        
+        </table>
+        </div>
+        </div>
+
+        
+
+
+    </div>
+  </body>
+</html>

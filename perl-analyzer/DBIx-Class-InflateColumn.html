@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::InflateColumn</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+            <li><a href="namespace-DBIx-Class-InflateColumn.html">DBIx::Class::InflateColumn</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::InflateColumn</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+                <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
+                <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            <li><a href="#inherited_methods" class="btn btn-default btn-xs">Inherited methods</a></li>
+            
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class<strong>/InflateColumn.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>92</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>6</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>5</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Inheritance tree <section id="inheritance"></section></h3></div>
+        <div class="panel-body" style="overflow: auto;">
+            <div id="inheritance_tree" >
+            <script>
+            var tree_data = [{"parent":"null","children":[{"type":"node_parent","parent":"Class::Accessor::Grouped","name":"DBIx::Class::AccessorGroup","children":[{"name":"Scalar::Util","parent":"DBIx::Class::AccessorGroup","type":"node_use"},{"parent":"DBIx::Class::AccessorGroup","name":"base","type":"node_use"},{"type":"node_use","name":"namespace::clean","parent":"DBIx::Class::AccessorGroup"},{"type":"node_use","name":"strict","parent":"DBIx::Class::AccessorGroup"},{"parent":"DBIx::Class::AccessorGroup","name":"warnings","type":"node_use"},{"parent":"DBIx::Class::AccessorGroup","name":"DBIx::Class::Componentised","children":[{"type":"node_parent","parent":"DBIx::Class::Componentised","children":[{"parent":"DBIx::Class","name":"DBIx::Class::Exception","type":"node_use"},{"parent":"DBIx::Class","name":"DBIx::Class::Optional::Dependencies","type":"node_use"},{"type":"node_use","name":"DBIx::Class::StartupCheck","parent":"DBIx::Class"},{"type":"node_use","name":"DBIx::Class::_Util","parent":"DBIx::Class"},{"name":"base","parent":"DBIx::Class","type":"node_use"},{"parent":"DBIx::Class","name":"mro","type":"node_use"},{"type":"node_use","parent":"DBIx::Class","name":"strict"},{"parent":"DBIx::Class","name":"warnings","type":"node_use"},{"type":"node_parent","parent":"DBIx::Class","children":[{"type":"node_use","parent":"DBIx::Class::Row","name":"DBIx::Class::Carp"},{"parent":"DBIx::Class::Row","name":"List::Util","type":"node_use"},{"name":"SQL::Abstract","parent":"DBIx::Class::Row","type":"node_use"},{"name":"Scalar::Util","parent":"DBIx::Class::Row","type":"node_use"},{"parent":"DBIx::Class::Row","name":"Try::Tiny","type":"node_use"},{"type":"node_use","name":"base","parent":"DBIx::Class::Row"},{"type":"node_use","parent":"DBIx::Class::Row","name":"namespace::clean"},{"name":"strict","parent":"DBIx::Class::Row","type":"node_use"},{"parent":"DBIx::Class::Row","name":"warnings","type":"node_use"},{"children":[{"parent":"DBIx::Class::InflateColumn","name":"SQL::Abstract","type":"node_use"},{"name":"base","parent":"DBIx::Class::InflateColumn","type":"node_use"},{"parent":"DBIx::Class::InflateColumn","name":"namespace::clean","type":"node_use"},{"name":"strict","parent":"DBIx::Class::InflateColumn","type":"node_use"},{"name":"warnings","parent":"DBIx::Class::InflateColumn","type":"node_use"}],"name":"DBIx::Class::InflateColumn","parent":"DBIx::Class::Row","type":"node_current"}],"name":"DBIx::Class::Row"}],"name":"DBIx::Class"}],"type":"node_parent"}]}],"name":"Class::Accessor::Grouped","type":"node_parent"}]
+            var tree_data_json = tree_data[0];
+            
+            var mlen   = 26;
+            var mchld  = 15;
+            var tdepth = 6;
+
+            </script>
+            </div>
+        </div>
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Parent packages <section id="parent_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li><a href="DBIx-Class-InflateColumn.html">DBIx::Class::InflateColumn</a></li>
+            
+                <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+            
+                <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+            
+                <li>DBIx::Class::Componentised</li>
+            
+                <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+            
+                <li>Class::Accessor::Grouped</li>
+            
+            </ul>
+        </div>
+        </div>
+
+
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>SQL::Abstract</li>
+            
+                <li>base</li>
+            
+                <li>namespace::clean</li>
+            
+                <li>strict</li>
+            
+                <li>warnings</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    get_inflated_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    inflate_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_inflated_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    store_inflated_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _deflated_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _inflated_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+        
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Inherited methods <section id="inherited_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Inherited from</th>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DBIx::Class::_ENV_::HELP_URL</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DESTROY</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>MODIFY_CODE_ATTRIBUTES</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>component_base_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>copy</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>delete</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>discard_changes</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_column</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_columns</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_dirty_columns</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_from_storage</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_inflated_columns</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>has_column_loaded</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>inflate_result</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>insert</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>insert_or_update</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>is_changed</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>is_column_changed</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>make_column_dirty</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classaccessor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classdata</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>new</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>register_column</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>result_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_column</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_columns</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_inflated_columns</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>store_column</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>throw_exception</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>update</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>update_or_insert</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>__new_related_find_or_new_helper</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>__their_pk_needs_us</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_attr_cache</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_eq_column_values</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_is_column_numeric</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_track_storage_value</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Row.html">DBIx::Class::Row</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+        
+        </table>
+        </div>
+        </div>
+
+        
+
+
+    </div>
+  </body>
+</html>

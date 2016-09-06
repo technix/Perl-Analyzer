@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::Schema::Versioned</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::Schema::Versioned</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+                <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
+                <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            <li><a href="#inherited_methods" class="btn btn-default btn-xs">Inherited methods</a></li>
+            <li><a href="#used_methods" class="btn btn-default btn-xs">Used methods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class/Schema<strong>/Versioned.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>305</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>17</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>8</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Inheritance tree <section id="inheritance"></section></h3></div>
+        <div class="panel-body" style="overflow: auto;">
+            <div id="inheritance_tree" >
+            <script>
+            var tree_data = [{"type":"node_parent","children":[{"name":"DBIx::Class::AccessorGroup","children":[{"name":"Scalar::Util","parent":"DBIx::Class::AccessorGroup","type":"node_use"},{"name":"base","parent":"DBIx::Class::AccessorGroup","type":"node_use"},{"type":"node_use","name":"namespace::clean","parent":"DBIx::Class::AccessorGroup"},{"name":"strict","parent":"DBIx::Class::AccessorGroup","type":"node_use"},{"parent":"DBIx::Class::AccessorGroup","name":"warnings","type":"node_use"},{"parent":"DBIx::Class::AccessorGroup","name":"DBIx::Class::Componentised","children":[{"parent":"DBIx::Class::Componentised","children":[{"name":"DBIx::Class::Exception","parent":"DBIx::Class","type":"node_use"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::Optional::Dependencies"},{"parent":"DBIx::Class","name":"DBIx::Class::StartupCheck","type":"node_use"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::_Util"},{"type":"node_use","name":"base","parent":"DBIx::Class"},{"parent":"DBIx::Class","name":"mro","type":"node_use"},{"type":"node_use","parent":"DBIx::Class","name":"strict"},{"name":"warnings","parent":"DBIx::Class","type":"node_use"},{"parent":"DBIx::Class","children":[{"name":"DBIx::Class::Carp","parent":"DBIx::Class::Schema","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Schema","name":"DBIx::Class::_Util"},{"type":"node_use","parent":"DBIx::Class::Schema","name":"Devel::GlobalDestruction"},{"type":"node_use","parent":"DBIx::Class::Schema","name":"File::Spec"},{"type":"node_use","name":"Module::Find","parent":"DBIx::Class::Schema"},{"type":"node_use","name":"Scalar::Util","parent":"DBIx::Class::Schema"},{"type":"node_use","parent":"DBIx::Class::Schema","name":"Try::Tiny"},{"type":"node_use","parent":"DBIx::Class::Schema","name":"base"},{"type":"node_use","name":"namespace::clean","parent":"DBIx::Class::Schema"},{"type":"node_use","name":"strict","parent":"DBIx::Class::Schema"},{"name":"warnings","parent":"DBIx::Class::Schema","type":"node_use"},{"type":"node_current","children":[{"parent":"DBIx::Class::Schema::Versioned","name":"DBIx::Class::Carp","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Schema::Versioned","name":"Scalar::Util"},{"type":"node_use","parent":"DBIx::Class::Schema::Versioned","name":"Time::HiRes"},{"type":"node_use","name":"Try::Tiny","parent":"DBIx::Class::Schema::Versioned"},{"parent":"DBIx::Class::Schema::Versioned","name":"base","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::Schema::Versioned","name":"namespace::clean"},{"type":"node_use","parent":"DBIx::Class::Schema::Versioned","name":"strict"},{"type":"node_use","parent":"DBIx::Class::Schema::Versioned","name":"warnings"}],"name":"DBIx::Class::Schema::Versioned","parent":"DBIx::Class::Schema"}],"name":"DBIx::Class::Schema","type":"node_parent"}],"name":"DBIx::Class","type":"node_parent"}],"type":"node_parent"}],"parent":"Class::Accessor::Grouped","type":"node_parent"}],"name":"Class::Accessor::Grouped","parent":"null"}]
+            var tree_data_json = tree_data[0];
+            
+            var mlen   = 30;
+            var mchld  = 17;
+            var tdepth = 6;
+
+            </script>
+            </div>
+        </div>
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Parent packages <section id="parent_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li><a href="DBIx-Class-Schema-Versioned.html">DBIx::Class::Schema::Versioned</a></li>
+            
+                <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+            
+                <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+            
+                <li>DBIx::Class::Componentised</li>
+            
+                <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+            
+                <li>Class::Accessor::Grouped</li>
+            
+            </ul>
+        </div>
+        </div>
+
+
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>DBIx::Class::Carp</li>
+            
+                <li>Scalar::Util</li>
+            
+                <li>Time::HiRes</li>
+            
+                <li>Try::Tiny</li>
+            
+                <li>base</li>
+            
+                <li>namespace::clean</li>
+            
+                <li>strict</li>
+            
+                <li>warnings</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    apply_statement
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    backup
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    <em>connection</em>
+                
+                </strong>
+                </td>
+                <td>
+                
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    create_upgrade_path
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    <em>deploy</em>
+                
+                </strong>
+                </td>
+                <td>
+                
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    do_upgrade
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    get_db_version
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    install
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    ordered_schema_versions
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    run_upgrade
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    upgrade
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    upgrade_single_step
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _create_db_to_schema_diff
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _on_connect
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _read_sql_file
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _set_db_version
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _source_exists
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+        
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Inherited methods <section id="inherited_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Inherited from</th>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DBIx::Class::_ENV_::HELP_URL</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DESTROY</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>MODIFY_CODE_ATTRIBUTES</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>clone</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>component_base_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>compose_connection</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>compose_namespace</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>create_ddl_dir</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>dclone</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>ddl_filename</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>deployment_statements</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>freeze</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>load_classes</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>load_namespaces</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classaccessor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classdata</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>populate</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>register_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>register_extra_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>register_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>resultset</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>setup_connection_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>sources</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_begin</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_release</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>svp_rollback</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>thaw</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>throw_exception</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_begin</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_commit</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_do</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_rollback</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>txn_scope_guard</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>unregister_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_attr_cache</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_copy_state_from</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_expand_relative_name</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_findallmod</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_map_namespaces</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_normalize_storage_type</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_ns_get_rsrc_instance</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_register_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_unregister_source</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-Schema.html">DBIx::Class::Schema</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+        
+        </table>
+        </div>
+        </div>
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used methods <section id="used_methods"></section></h3></div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+            <tr>
+            <th class="active" style="width:15%">Package</th>
+            <th class="active">Methods</th>
+            </tr>
+            
+            <tr>
+                <td>DBIx::Class::Version</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>connect</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>DBIx::Class::VersionCompat</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>connect</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>SQL::Translator::Diff</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>schema_diff</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            </table>
+        </div>
+        </div>
+        
+
+
+    </div>
+  </body>
+</html>

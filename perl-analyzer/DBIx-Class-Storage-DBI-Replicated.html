@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::Storage::DBI::Replicated</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage.html">DBIx::Class::Storage</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+            
+            <li><a href="namespace-DBIx-Class-Storage-DBI-Replicated.html">DBIx::Class::Storage::DBI::Replicated</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::Storage::DBI::Replicated</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            
+            <li><a href="#used_methods" class="btn btn-default btn-xs">Used methods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class/Storage/DBI<strong>/Replicated.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>556</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>42</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>13</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>Context::Preserve</li>
+            
+                <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+            
+                <li><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></li>
+            
+                <li><a href="DBIx-Class-Storage-DBI-Replicated-Balancer.html">DBIx::Class::Storage::DBI::Replicated::Balancer</a></li>
+            
+                <li><a href="DBIx-Class-Storage-DBI-Replicated-Pool.html">DBIx::Class::Storage::DBI::Replicated::Pool</a></li>
+            
+                <li>DBIx::Class::Storage::DBI::Replicated::Types</li>
+            
+                <li>Hash::Merge</li>
+            
+                <li>List::Util</li>
+            
+                <li>Moose</li>
+            
+                <li>MooseX::Types::Moose</li>
+            
+                <li>Scalar::Util</li>
+            
+                <li>Try::Tiny</li>
+            
+                <li>namespace::clean</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    BUILDARGS
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    all_storages
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    connect_call_datetime_setup
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    connect_call_do_sql
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    connected
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    cursor
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    cursor_class
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    debug
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    debugcb
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    debugfh
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    debugobj
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    disable_sth_caching
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    disconnect
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    disconnect_call_do_sql
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    ensure_connected
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    execute_reliably
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    is_replicating
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    lag_behind_master
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    limit_dialect
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    name_sep
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    quote_char
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_balanced_storage
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_reliable_storage
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_schema
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    unsafe
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_balancer
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_master
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_pool
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_read_handler
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_write_handler
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _connect
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _determine_driver
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _do_connection_actions
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _driver_determined
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _get_server_version
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _init
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _ping
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _populate_dbh
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _rebless
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _run_connection_actions
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _seems_connected
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _server_info
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+        
+        
+        </table>
+        </div>
+        </div>
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used methods <section id="used_methods"></section></h3></div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+            <tr>
+            <th class="active" style="width:15%">Package</th>
+            <th class="active">Methods</th>
+            </tr>
+            
+            <tr>
+                <td>Class::MOP::Class</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>initialize</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><a href="DBIx-Class-Storage-DBI.html">DBIx::Class::Storage::DBI</a></td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>can</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Moose::Meta::Class</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>initialize</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            </table>
+        </div>
+        </div>
+        
+
+
+    </div>
+  </body>
+</html>

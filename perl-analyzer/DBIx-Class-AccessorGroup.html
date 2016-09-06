@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::AccessorGroup</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::AccessorGroup</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+                <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
+                <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            
+            
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class<strong>/AccessorGroup.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>25</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>5</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Inheritance tree <section id="inheritance"></section></h3></div>
+        <div class="panel-body" style="overflow: auto;">
+            <div id="inheritance_tree" >
+            <script>
+            var tree_data = [{"name":"Class::Accessor::Grouped","children":[{"type":"node_current","parent":"Class::Accessor::Grouped","children":[{"parent":"DBIx::Class::AccessorGroup","name":"Scalar::Util","type":"node_use"},{"parent":"DBIx::Class::AccessorGroup","name":"base","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::AccessorGroup","name":"namespace::clean"},{"type":"node_use","parent":"DBIx::Class::AccessorGroup","name":"strict"},{"name":"warnings","parent":"DBIx::Class::AccessorGroup","type":"node_use"}],"name":"DBIx::Class::AccessorGroup"}],"parent":"null","type":"node_parent"}]
+            var tree_data_json = tree_data[0];
+            
+            var mlen   = 26;
+            var mchld  = 7;
+            var tdepth = 2;
+
+            </script>
+            </div>
+        </div>
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Parent packages <section id="parent_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+            
+                <li>Class::Accessor::Grouped</li>
+            
+            </ul>
+        </div>
+        </div>
+
+
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>Scalar::Util</li>
+            
+                <li>base</li>
+            
+                <li>namespace::clean</li>
+            
+                <li>strict</li>
+            
+                <li>warnings</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    get_component_class
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_component_class
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+        
+        
+        </table>
+        </div>
+        </div>
+
+        
+
+
+    </div>
+  </body>
+</html>

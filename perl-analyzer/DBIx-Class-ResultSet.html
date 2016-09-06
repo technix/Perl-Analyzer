@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        body { padding-top: 180px; }
+        section {
+            padding-top:180px;
+            margin-top:-180px;
+            z-index: -9999;
+            width: 1px;
+        }
+        .p-title {
+            margin: 0px;
+        }
+
+
+        /* diagram */ 
+        .node_parent circle {
+            fill: #fff;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node_use circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+        .node_current circle {
+            fill: #990000;
+            stroke: #990000;
+            stroke-width: 3px;
+        }
+        .node text { font: 14px sans-serif }
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="draw_tree.js"></script>
+    
+    
+    <title>DBIx::Class::ResultSet</title>
+    </head>
+  <body>
+    
+    
+    
+    
+    
+    
+    
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+        <ol class="breadcrumb">
+            
+            <li><a href="index.html">~</a></li>
+            
+            <li><a href="namespace-DBIx.html">DBIx</a></li>
+            
+            <li><a href="namespace-DBIx-Class.html">DBIx::Class</a></li>
+            
+        </ol>
+
+            <h1>DBIx::Class::ResultSet</h1>
+            <ul class="list-inline">
+            <li><a href="#details" class="btn btn-default btn-xs">Details</a></li>
+            
+            
+            
+                <li><a href="#inheritance" class="btn btn-default btn-xs">Inheritance tree</a></li>
+                <li><a href="#parent_package" class="btn btn-default btn-xs">Parent packages</a></li>
+            
+            <li><a href="#used_package" class="btn btn-default btn-xs">Used packages</a></li>
+            <li><a href="#package_methods" class="btn btn-default btn-xs">Package methods</a></li>
+            <li><a href="#inherited_methods" class="btn btn-default btn-xs">Inherited methods</a></li>
+            <li><a href="#used_methods" class="btn btn-default btn-xs">Used methods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Details <section id="details"></section></h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+            <td>Filename</td>
+            <td>../../DBIx-Class-0.082840/lib/DBIx/Class<strong>/ResultSet.pm</strong></td>
+            </tr>
+            <tr>
+            <td>Line count</td>
+            <td>2125</td>
+            </tr>
+            <tr>
+            <td>Method count</td>
+            <td>66</td>
+            </tr>
+            <tr>
+            <td>Dependency count</td>
+            <td>15</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+
+        
+
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Inheritance tree <section id="inheritance"></section></h3></div>
+        <div class="panel-body" style="overflow: auto;">
+            <div id="inheritance_tree" >
+            <script>
+            var tree_data = [{"parent":"null","name":"Class::Accessor::Grouped","children":[{"name":"DBIx::Class::AccessorGroup","children":[{"type":"node_use","name":"Scalar::Util","parent":"DBIx::Class::AccessorGroup"},{"parent":"DBIx::Class::AccessorGroup","name":"base","type":"node_use"},{"type":"node_use","name":"namespace::clean","parent":"DBIx::Class::AccessorGroup"},{"parent":"DBIx::Class::AccessorGroup","name":"strict","type":"node_use"},{"type":"node_use","name":"warnings","parent":"DBIx::Class::AccessorGroup"},{"type":"node_parent","name":"DBIx::Class::Componentised","children":[{"type":"node_parent","name":"DBIx::Class","children":[{"parent":"DBIx::Class","name":"DBIx::Class::Exception","type":"node_use"},{"name":"DBIx::Class::Optional::Dependencies","parent":"DBIx::Class","type":"node_use"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::StartupCheck"},{"type":"node_use","parent":"DBIx::Class","name":"DBIx::Class::_Util"},{"name":"base","parent":"DBIx::Class","type":"node_use"},{"name":"mro","parent":"DBIx::Class","type":"node_use"},{"type":"node_use","name":"strict","parent":"DBIx::Class"},{"type":"node_use","name":"warnings","parent":"DBIx::Class"},{"type":"node_current","name":"DBIx::Class::ResultSet","children":[{"parent":"DBIx::Class::ResultSet","name":"DBIx::Class::Carp","type":"node_use"},{"type":"node_use","name":"DBIx::Class::ResultClass::HashRefInflator","parent":"DBIx::Class::ResultSet"},{"parent":"DBIx::Class::ResultSet","name":"DBIx::Class::ResultSet::Pager","type":"node_use"},{"type":"node_use","name":"DBIx::Class::ResultSetColumn","parent":"DBIx::Class::ResultSet"},{"name":"DBIx::Class::_Util","parent":"DBIx::Class::ResultSet","type":"node_use"},{"name":"Data::Dumper::Concise","parent":"DBIx::Class::ResultSet","type":"node_use"},{"parent":"DBIx::Class::ResultSet","name":"Hash::Merge","type":"node_use"},{"type":"node_use","name":"List::Util","parent":"DBIx::Class::ResultSet"},{"type":"node_use","parent":"DBIx::Class::ResultSet","name":"Scalar::Util"},{"name":"Try::Tiny","parent":"DBIx::Class::ResultSet","type":"node_use"},{"type":"node_use","name":"base","parent":"DBIx::Class::ResultSet"},{"parent":"DBIx::Class::ResultSet","name":"namespace::clean","type":"node_use"},{"type":"node_use","parent":"DBIx::Class::ResultSet","name":"overload"},{"type":"node_use","parent":"DBIx::Class::ResultSet","name":"strict"},{"name":"warnings","parent":"DBIx::Class::ResultSet","type":"node_use"}],"parent":"DBIx::Class"}],"parent":"DBIx::Class::Componentised"}],"parent":"DBIx::Class::AccessorGroup"}],"parent":"Class::Accessor::Grouped","type":"node_parent"}],"type":"node_parent"}]
+            var tree_data_json = tree_data[0];
+            
+            var mlen   = 26;
+            var mchld  = 20;
+            var tdepth = 5;
+
+            </script>
+            </div>
+        </div>
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Parent packages <section id="parent_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li><a href="DBIx-Class-ResultSet.html">DBIx::Class::ResultSet</a></li>
+            
+                <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+            
+                <li>DBIx::Class::Componentised</li>
+            
+                <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+            
+                <li>Class::Accessor::Grouped</li>
+            
+            </ul>
+        </div>
+        </div>
+
+
+        
+
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used packages <section id="used_packages"></section></h3></div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            
+                <li>DBIx::Class::Carp</li>
+            
+                <li><a href="DBIx-Class-ResultClass-HashRefInflator.html">DBIx::Class::ResultClass::HashRefInflator</a></li>
+            
+                <li>DBIx::Class::ResultSet::Pager</li>
+            
+                <li><a href="DBIx-Class-ResultSetColumn.html">DBIx::Class::ResultSetColumn</a></li>
+            
+                <li>DBIx::Class::_Util</li>
+            
+                <li>Data::Dumper::Concise</li>
+            
+                <li>Hash::Merge</li>
+            
+                <li>List::Util</li>
+            
+                <li>Scalar::Util</li>
+            
+                <li>Try::Tiny</li>
+            
+                <li>base</li>
+            
+                <li>namespace::clean</li>
+            
+                <li>overload</li>
+            
+                <li>strict</li>
+            
+                <li>warnings</li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Methods</h3></div>
+        <div class="panel-body">
+        <table class="table table-condensed">
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Package methods <section id="package_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Redefined from</th>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    STORABLE_freeze
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    STORABLE_thaw
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    all
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    as_query
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    as_subselect_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    clear_cache
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    count
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    count_literal
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    count_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    create
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    current_source_alias
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    cursor
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    delete
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    delete_all
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    find
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    find_or_create
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    find_or_new
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    first
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    get_cache
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    get_column
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    is_ordered
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    is_paged
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    new
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    new_result
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    next
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    page
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    pager
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    populate
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    related_resultset
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    reset
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    result_class
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search_like
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search_literal
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search_related
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search_related_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    search_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    set_cache
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    single
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    slice
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    throw_exception
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    update
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    update_all
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    update_or_create
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    update_or_new
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _bool
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _build_unique_cond
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _calculate_score
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _chain_relationship
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _construct_results
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _count_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _count_subq_rs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _has_resolved_attr
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _merge_attr
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _merge_joinpref_attr
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _merge_with_rscond
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _non_unique_find_fallback
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _normalize_selection
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _qualify_cond_columns
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _remove_alias
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _resolved_attrs
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _rollout_array
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _rollout_attr
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _rollout_hash
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _rs_update_delete
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td style="width:15%">
+                <strong>
+                
+                    _stack_cond
+                
+                </strong>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+            
+        
+        
+            <tr>
+            <th colspan="2" class="active"><h4>Inherited methods <section id="inherited_methods"></section></h4></th>
+            </tr>
+            <tr>
+            <th class="active">Name</th>
+            <th class="active">Inherited from</th>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DBIx::Class::_ENV_::HELP_URL</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>DESTROY</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>MODIFY_CODE_ATTRIBUTES</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>component_base_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>get_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classaccessor</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>mk_classdata</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>set_component_class</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class-AccessorGroup.html">DBIx::Class::AccessorGroup</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+            <tr>
+                <td style="width:15%">
+                    <em>_attr_cache</em>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="DBIx-Class.html">DBIx::Class</a></li>
+                        
+                    </ul>
+                   </td>
+            </tr>
+            
+        
+        </table>
+        </div>
+        </div>
+
+        
+        <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="p-title">Used methods <section id="used_methods"></section></h3></div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+            <tr>
+            <th class="active" style="width:15%">Package</th>
+            <th class="active">Methods</th>
+            </tr>
+            
+            <tr>
+                <td>::Row</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>inflate_result</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><a href="DBIx-Class-Exception.html">DBIx::Class::Exception</a></td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>throw</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><a href="DBIx-Class-ResultClass-HashRefInflator.html">DBIx::Class::ResultClass::HashRefInflator</a></td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>can</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><a href="DBIx-Class-ResultSet.html">DBIx::Class::ResultSet</a></td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>can</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Data::Dumper::Concise</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>DumperObject</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Row</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>inflate_result</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Storable</td>
+                <td>
+                    <ul class="list-unstyled">
+                        
+                        <li>nfreeze</a></li>
+                        
+                        <li>thaw</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+            
+            </table>
+        </div>
+        </div>
+        
+
+
+    </div>
+  </body>
+</html>
