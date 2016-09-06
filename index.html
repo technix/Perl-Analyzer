@@ -47,14 +47,26 @@ that allow you to analyse and visualise Perl codebases:</p>
 <li>Calls to methods from parent package via SUPER</li>
 </ul>
 
+<h2>Example</h2>
+
+<p>This is the output of perl-analyzer for DBIx::Class package. (Click on images to view them in full size)</p>
+
+<b>Namespaces chart</b>
+<a href="images/namespaces.png"><img src="images/namespaces-tn.png"></a>
+
+<b>Package dependency chart</b>
+<a href="images/packages.png"><img src="images/packages-tn.png"></a>
+
+<h2>Usage</h2>
+
 <p>The software is split into two parts - analyzer (perl-analyzer, which uses
 Perl::Analyzer module) and renderer (perl-analyzer-output, which uses
 Perl::Analyzer::Output and related plugins).</p>
 
-<p>Usage example:</p>
-
-<pre><code>perl-analyzer --source-dir=~/my/perl/Project --datafile=~/my/perl/Project_src.dat
-perl-analyzer-output --datafile=~/my/perl/Project_src.dat --output-dir=~/my/perl/Project_analysis --format=html
+<pre><code>perl-analyzer --source-dir=~/my/perl/Project 
+    --datafile=~/my/perl/Project_src.dat
+perl-analyzer-output --datafile=~/my/perl/Project_src.dat 
+    --output-dir=~/my/perl/Project_analysis --format=html
 </code></pre>
 
 <p>Available output formats:</p>
