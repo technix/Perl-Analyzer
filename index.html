@@ -65,7 +65,7 @@ perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysi
 
 
 <p><a href="perl-analyzer/index.html" target="_blank">Browse HTML output of analysis of DBIx::Class</a></p>
-<p><a href="perl-analyzer/DBIx-Class-Core.html" target="_blank">Example page with analysis of DBIx::Class::Core</a></p>
+<p><a href="perl-analyzer/DBIx-Class-Schema-Versioned.html" target="_blank">Example page with analysis of DBIx::Class::Schema::Versioned package</a></p>
 
 <table style="border:0px; border-collapse:collapse">
     <tbody>
@@ -82,7 +82,7 @@ perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysi
 	    Namespaces chart
 	    </td>
 	    <td style="border:0px; padding: 0px; text-align:center">
-	    Package dependency chart
+	    Package inheritance chart
 	    </td>
 	</tr>
     </tbody>
@@ -94,15 +94,51 @@ perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysi
 <h2>Usage</h2>
 
 
-<pre><code>perl-analyzer --source-dir=~/my/perl/Project 
-    --datafile=~/my/perl/Project_src.dat
 
-perl-analyzer-output --datafile=~/my/perl/Project_src.dat 
-    --output-dir=~/my/perl/Project_analysis --format=html
-</code></pre>
+<h3>perl-analyzer</h3>
+
+<pre><code>perl-analyzer --source-dir <strong>source_dir</strong> --datafile <strong>file</strong> [--verbose]
+   [--with-constants] [--with-fields]</code></pre>
+
+<p><strong>--source-dir, --src</strong></p>
+<p>Directory with Perl source code to analyze.</p>
+
+<p><strong>--datafile, --data</strong></p>
+<p>Output file with analysis data. Should be used as input file for perl_analyzer_output.</p>
+
+<p><strong>--verbose</strong></p>
+<p>Print processing information to stdout.</p>
+
+<p><strong>--with-constants</strong></p>
+<p>Parse 'use constant'.</p>
+
+<p><strong>--with-fields</strong></p>
+<p>Parse 'use fields'.</p>
 
 
-<p>Available output formats:</p>
+<h3>perl-analyzer-output</h3>
+
+<pre><code>perl-analyzer-output --datafile <strong>file</strong> --output-dir <strong>dir</strong>
+   --format [<strong>dot</strong>|<strong>dump</strong>|<strong>html</strong>|<strong>json</strong>|<strong>png</strong>|<strong>svg</strong>]
+   [--options "options_string"] [--verbose]</code></pre>
+
+
+<p><strong>--datafile, --data</strong></p>
+<p>Input file with analysis data.</p>
+
+<p><strong>--output-dir, --out</strong></p>
+<p>Output directory. Created automatically if does not exist.</p>
+
+<p><strong>--format format_name</strong></p>
+<p>Defines output format.</p>
+
+<p><strong>--options "opt1=val1;opt2=val2"</strong></p>
+<p>Define options for given format.</p>
+
+<p><strong>--verbose</strong></p>
+<p>Print processing information to stdout.</p>
+
+<h3>Output formats</h3>
 
 <p><strong>dump</strong> (requires Data::Dumper)</p>
 
@@ -119,7 +155,9 @@ through namespaces and view detailed package information.</p>
 
 <p><strong>dot, svg, png</strong> (requires GraphViz2)</p>
 
-<p>Generates namespace and inheritance diagrams in given format.</p>
+<p>Generates namespace and inheritance diagrams in given format. For large codebases please use SVG format, since PNG has size limitations.</p>
+
+
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
