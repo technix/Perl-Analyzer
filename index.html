@@ -120,7 +120,7 @@ perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysi
 
 <pre><code>perl-analyzer-output --datafile <strong>file</strong> --output-dir <strong>dir</strong>
    --format [<strong>dot</strong>|<strong>dump</strong>|<strong>html</strong>|<strong>json</strong>|<strong>png</strong>|<strong>svg</strong>]
-   [--options "options_string"] [--verbose]</code></pre>
+   [--options "options_string"] [--filter "filter_regexp"] [--verbose]</code></pre>
 
 
 <p><strong>--datafile, --data</strong></p>
@@ -134,6 +134,9 @@ perl-analyzer-output --datafile=DBIx-Class.dat --output-dir=./DBIx-Class-Analysi
 
 <p><strong>--options "opt1=val1;opt2=val2"</strong></p>
 <p>Define options for given format.</p>
+
+<p><strong>--filter "filter_regexp"</strong></p>
+<p>Include only modules with names matching the regexp.</p>
 
 <p><strong>--verbose</strong></p>
 <p>Print processing information to stdout.</p>
