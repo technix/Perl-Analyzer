@@ -1,6 +1,8 @@
 Perl-Analyzer
 ========================
 
+http://technix.github.io/Perl-Analyzer/
+
 This is a set of programs (and modules which can be used separately)
 that allow you to analyse and visualise Perl codebases:
 
