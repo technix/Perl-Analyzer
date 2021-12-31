@@ -24,7 +24,7 @@ sub make {
 
 sub dump_codebase {
     my $self = shift;
-    foreach my $type (sort keys $self->{'codebase'}) {
+    foreach my $type (sort keys %{ $self->{'codebase'} }) {
         my $filename  = $self->output_file($type . '.dump');
         my $data = Dumper($self->{'codebase'}->{$type});
         $self->save_file($filename, $data);
