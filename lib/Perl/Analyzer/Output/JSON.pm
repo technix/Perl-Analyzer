@@ -25,7 +25,7 @@ sub make {
 
 sub dump_codebase {
     my $self = shift;
-    foreach my $type (sort keys $self->{'codebase'}) {
+    foreach my $type (sort keys %{ $self->{'codebase'} }) {
         my $filename  = $self->output_file($type . '.json');
         my $json_data = $self->{'json'}->pretty->encode( $self->{'codebase'}->{$type} );
         $self->save_file($filename, $json_data);
